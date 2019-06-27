@@ -10,7 +10,7 @@ jobs:
       - run: npm install
   deploy:
     docker:
-      - image: gcr.io/newprotectruben1/googlesdk
+      - image: gcr.io/newprotectruben1/googlesdk:v1
         auth:
           username: _json_key
           password: $GCLOUD_SERVICE_KEY
