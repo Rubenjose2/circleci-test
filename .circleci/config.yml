@@ -10,7 +10,8 @@ jobs:
       - run: npm install
   deploy:
     docker:
-      - image: gcr.io/newprotectruben1/googlesdk
+      - image: google/cloud-sdk
+#      - image: gcr.io/newprotectruben1/googlesdk
     steps:
       - run: |
           echo $GCLOUD_SERVICE_KEY
