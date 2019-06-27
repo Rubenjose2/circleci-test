@@ -10,13 +10,13 @@ jobs:
       - run: npm install
   deploy:
     docker:
-      - image: google/cloud-sdk
-#      - image: gcr.io/newprotectruben1/googlesdk
+      - image: gcr.io/newprotectruben1/googlesdk
+        auth:
+          username: _json_key
+          password: $GCLOUD_SERVICE_KEY
     steps:
       - run: |
-          echo $GCLOUD_SERVICE_KEY
-          gcloud -v
-
+          echo ${GCLOUD_SERVICE_KEY}
 workflows:
   version: 2
   workflow:
